@@ -1,0 +1,51 @@
+<h1>Return the book</h1>
+<form action="/returnnewbook" method="POST">
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Bookid</label>
+    <input type="text" name="Bookid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:700px"value="{{book._id}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Bookname</label>
+    <input type="text" name="Bookname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:700px"value="{{book.Bookname}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">BookTopic</label>
+    <input type="text" name="Booktopic" class="form-control" id="exampleInputPassword1" style="width:700px"value="{{book.Booktopic}}">
+  </div>
+ 
+  <div class="form-group">
+    <label for="exampleInputPassword1">Category</label>
+    <input type="text" name="category"class="form-control" id="exampleInputPassword1" style="width:700px"value="{{book.category}}">
+  </div>
+ 
+  <div class="form-group">
+    <label for="exampleInputPassword1">Bookauthor</label>
+    <input type="text" name="Bookauthor" class="form-control" id="exampleInputPassword1" style="width:700px"value="{{book.Bookauthor}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">BookRating</label>
+    <input type="number" name="Bookrating"class="form-control" id="exampleInputPassword1" style="width:700px"value="{{book.Bookrating}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">NumberofPages</label>
+    <input type="text" name="NumberofPages" class="form-control" id="exampleInputPassword1" style="width:700px"value="{{book.NumberofPages}}">
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputPassword1">IssueDate</label>
+    <input type="text" name="issueDate" class="form-control" id="exampleInputPassword1" style="width:700px" value={{issuedate}}>
+  </div>
+ 
+   <div class="form-group">
+    <label for="exampleInputPassword1">ReturnDate</label>
+    <input type="date" name="returnDate" class="form-control" id="exampleInputPassword1" style="width:700px"placeholder="dd-mm-yyyy">
+  </div>
+ 
+   <div class="form-group">
+    <label for="exampleInputPassword1">Userid</label>
+    <input type="text" name="Userid" class="form-control" id="exampleInputPassword1" style="width:700px" value="{{book.userid}}">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
