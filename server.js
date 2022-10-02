@@ -113,7 +113,8 @@ res.render('error')
 //     console.log("server is running at 3000")
 // })
 
-server.listen('3000',()=>{
+const PORT=process.env.PORT || 3000
+server.listen(PORT,()=>{
     console.log("port is running")
 })
 
