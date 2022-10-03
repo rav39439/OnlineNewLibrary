@@ -66,7 +66,6 @@ console.log("assignbook")
 
 
 router.get("/returnnewbook/:id",async (req, res) => {
-console.log("assignbook")
   try {
     const book = await Book.findById(req.params.id);
     //res.status(200).json(book);
@@ -75,8 +74,13 @@ console.log("assignbook")
     var yyyy = book.issueDate.getFullYear();
     
     today = yyyy + '-' + mm + '-' + dd;
-    console.log(today)
-    res.render("submitbook",{book:book,issuedate:today})
+
+    const user = await User.findById(book.userid);
+
+
+
+
+    res.render("submitbook",{book:book,issuedate:today,user:user})
   } catch (err) {
     res.status(500).json(err);
   }

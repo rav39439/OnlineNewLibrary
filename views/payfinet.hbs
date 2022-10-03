@@ -2,20 +2,19 @@
 
 
 <h1>Update your fine</h1>
-
 <form action="/payfine" method="POST">
   <div class="form-group">
     <label for="exampleInuutEmail1">Username</label>
-    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:700px" value="{{user.username}}">
+    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:700px" value={{usert.username}} readonly>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Userid</label>
-    <input type="text" name="userid" class="form-control" id="exampleInputPassword1" style="width:700px"  value="{{user._id}}">
+    <input type="text" name="userid" class="form-control" id="exampleInputPassword1" style="width:700px"  value={{usert._id}} readonly>
   </div>
 
   <div class="form-group">
     <label for="exampleInputPassword1"> Total fine</label>
-    <input type="number" name="fine"class="form-control" id="exampleInputPassword1" style="width:700px" value={{user.fine}}>
+    <input type="number" name="fine"class="form-control" id="exampleInputPassword1" style="width:700px" value={{usert.fine}} readonly>
   </div>
 
   <div class="form-group">

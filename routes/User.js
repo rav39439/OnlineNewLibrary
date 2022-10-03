@@ -144,12 +144,12 @@ router.get("/searchbyfine", async (req, res) => {
 
 
   router.get("/payfine/:id",async(req,res)=>{
-console.log(req.params.id)
+console.log("fine is running")
     try {
-      const user = await User.find({"_id":ObjectId(req.params.id)})
-      console.log(user)
+      var user = await User.findById(req.params.id)
+      console.log(user.username)
 
-      res.render("payfinet",{user:user})
+      res.render("payfinet",{usert:user})
     } catch (err) {
       console.log(err)
       res.status(500).json(err);
@@ -158,7 +158,8 @@ console.log(req.params.id)
   })
 
   router.post("/payfine",async(req,res)=>{
-  
+    let myusers=[]
+
 console.log("paid fine is runnign")
     const updateuser = await User.findOneAndUpdate({
       "_id":ObjectId(req.body.userid)
@@ -169,7 +170,12 @@ console.log("paid fine is runnign")
        },
        
      )
-     res.send("Your fine is updated")
+
+     myusers= await User.find({});
+     // res.send("Book is assigned to"+req.body.Userid)
+    var g="Your fine is updated "
+     res.render('Allusers',{titl:g,users:myusers})
+    //res.send("Your fine is updated")
     
   })
 module.exports=router;

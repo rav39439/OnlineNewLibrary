@@ -1,10 +1,6 @@
 
 <h1>{{title}}</h1>
-{{#if titl}}
- <div id="messagebody">
-      <div class="alert alert-primary" id="message" role="alert">{{titl}} </div>
-      </div>
-{{/if}}
+
 <div style="float:left ;">
 <form action="/searchbystatus" Method="GET">
   <select  id="cars" name="status">
@@ -30,7 +26,15 @@
 </form>
 </div>
 
+
 <table class="new4" >
+
+  {{#if titl}}
+ <div id="messagebody"style="margin-top:80px">
+      <div class="alert alert-primary" id="message" role="alert">{{titl}} </div>
+      </div>
+{{/if}}
+
   <thead class="thead-dark">
     <tr>
               <h4 style="margin-top:60px;margin-left:100px">All the Books in Library</h4>
