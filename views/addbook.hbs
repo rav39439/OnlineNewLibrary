@@ -1,71 +1,85 @@
-<h1>{{title}}</h1>
 
+<center><div class="new4"style=" width:800px;
+  height: 790px;
+    background-color:white ;
+margin-left:0px;
+  margin-top:70px;
+    border-radius: 25px;
+">
+  <h1>Add Book To Library</h1>
 <form action="/postbook" method="POST">
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="exampleInputEmail1">Bookname</label>
     <input type="text" name="Bookname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:700px">
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">BookTopic</label>
+  <div class="form-group mt-2">
+    <label for="exampleInputPassword1">Description</label>
     <input type="text" name="Booktopic" class="form-control" id="exampleInputPassword1" style="width:700px">
   </div>
  
-  <select  id="cars"name="category">
+ <label for="">Select Category</label>
+  <select  id="cars mt-2"name="category">
   <option value="Physics">Physics</option>
   <option value="Chemistry">Chemistry</option>
   <option value="Maths">Maths</option>
   <option value="story">Story</option>
 </select>
  
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="exampleInputPassword1">Bookauthor</label>
     <input type="text" name="Bookauthor" class="form-control" id="exampleInputPassword1" style="width:700px">
   </div>
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="exampleInputPassword1">BookRating</label>
     <input type="number" name="Bookrating"class="form-control" id="exampleInputPassword1" style="width:700px">
   </div>
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="exampleInputPassword1">NumberofPages</label>
     <input type="text" name="NumberofPages" class="form-control" id="exampleInputPassword1" style="width:700px">
   </div>
- <select  id="cars" name="status">
+  <label for="status" class="mt-2">status(Whether assigned or not assigned to user)</label>
+ <select  id="cars mt-2" name="status">
   <option value="Not Assigned">Not assigned</option>
   <option value="Assigned">assigned</option>
   
 </select>
 
- <div class="form-group">
-    <label for="exampleInputPassword1">userid</label>
+ <div class="form-group mt-2">
+    <label for="exampleInputPassword1">userid(only if assigned)</label>
     <input type="text" name="userid" class="form-control" id="exampleInputPassword1" style="width:700px"readonly>
   </div>
- <div class="form-group">
-    <label for="exampleInputPassword1">returnDate</label>
+ <div class="form-group mt-2">
+    <label for="exampleInputPassword1">returnDate(only if assigned)</label>
     <input type="date" name="returnDate" class="form-control" id="exampleInputPassword1" style="width:700px"readonly>
   </div>
- <div class="form-group">
-    <label for="exampleInputPassword1">issueDate</label>
+ <div class="form-group mt-2">
+    <label for="exampleInputPassword1">issueDate(only if assigned)</label>
     <input type="date" name="issueDate"  class="form-control" id="exampleInputPassword1" style="width:700px"readonly>
   </div>
 
 
 
- <div class="form-group">
-    <label for="exampleInputPassword1">imageurl</label>
-    <input type="text" name="image"  class="form-control" id="imgd" style="width:700px"readonly>
+ <div class="form-group mt-2">
+    <label for="exampleInputPassword1">imageurl(only if assigned)</label>
+    <input type="text" name="image"  class="form-control" id="imgd" style="width:700px">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
 </form>
+</div></center>
 
-
-  <h1>Upload files to database</h1>
+<center><div style=" width:800px;
+    background-color:white ;
+margin-left:0px;
+  margin-top:70px;
+    border-radius: 25px;
+">
+  <h1>Upload Image of the book</h1>
     <img src="" id="newimage" style="width:200px;height:200px;"><br>
     <input type="file" id="photo" /><br>
 
  <button onclick="uploadImage()">Upload Image</button>
-
-
-
+</div>
+</center>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true">
         <div class="modal-dialog">
@@ -124,7 +138,6 @@
 
   
 <script>
-
 
 function showdialog(data){
    let myid=data.id
@@ -187,6 +200,7 @@ firebase.initializeApp(firebaseConfig);
 function newcallback(url){
 
  document.getElementById('imgd').value=url
+ document.getElementById('file1').value=url
    
 }
     

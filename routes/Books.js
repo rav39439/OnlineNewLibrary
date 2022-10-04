@@ -235,7 +235,7 @@ router.get("/searchbystatus", async (req, res) => {
 
 
 router.get("/addbookauth",(req,res)=>{
-  res.render("Login")
+  res.render("Login",{title:"Login as admin to add book to the library"})
 })
 
 router.post("/addbookauth",(req,res)=>{

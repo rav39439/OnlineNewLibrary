@@ -1,7 +1,7 @@
 
 <h1>{{title}}</h1>
-
-<div style="float:left ;">
+<div style="background-color:white">
+<div >
 <form action="/searchbystatus" Method="GET">
   <select  id="cars" name="status">
   <option value="Not Assigned">Not assigned</option>
@@ -12,11 +12,11 @@
   
   </button>
 </form>
-</div>
+</div><br>
 
 
 
-<div style="float:right">
+<div >
 <form action="/searchbybookname" Method="GET" style="display:inline-flex;">
     <input type="search" id="form1" name="bookname" class="form-control" style="width:400px" placeholder="Seach your book"/>
     
@@ -25,78 +25,51 @@
   </button>
 </form>
 </div>
+</div>
+
+
 
 <div id="mybooks"style="display:none">{{nbooks}}
 
 </div>
-<table class="new4" >
-
-  {{#if titl}}
+ {{#if titl}}
  <div id="messagebody"style="margin-top:80px">
       <div class="alert alert-primary" id="message" role="alert">{{titl}} </div>
       </div>
 {{/if}}
 
-  <thead class="thead-dark">
-    <tr>
-              <h4 style="margin-top:60px;margin-left:100px">All the Books in Library</h4>
 
-      <th scope="col"style="padding:10px; border: 1px solid;">sno</th>
-            <th scope="col"style="padding:10px; border: 1px solid;">image</th>
 
-      <th scope="col"style="padding:10px; border: 1px solid;">Bookname</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">Booktopic</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">category</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">Bookauthor</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">Bookrating</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">NumberofPages</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">status</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">Assignbook</th>
-      <th scope="col"style="padding:10px; border: 1px solid;">Submitbook</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    
 {{#each mybooks}}
-    <tr style="padding-top:10px">
+ <div class="card mb-4"style="margin-top:40px">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="#">
+                    <img class="img-fluid rounded" src="{{image}}" alt="">
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="card-title">{{Bookname}}</h2>
+                <p class="card-text">{{Booktopic}}</p>
+                  <p class="user ml-2" id={{_id}}></p>
+                  <p class="user ml-2">BY:{{Bookauthor}}</p>
 
-      
+                <a href="images?img={{image}}&&bookname={{Bookname}}&&booktopic={{Booktopic}}&&author={{Bookauthor}}&&id={{_id}}">Read more &rarr;</a>
 
 
-      <th scope="row" style="display:none">{{_id}}</th>
-      <th scope="row" style="padding:10px; border: 1px solid;"> {{@index}}</th>
-{{#if image}}
+            </div>
+        </div>
+    </div>
 
-<td style="padding:10px; border: 1px solid;"><a href="images?img={{image}}&&bookname={{Bookname}}&&booktopic={{Booktopic}}&&author={{Bookauthor}}&&id={{_id}}"><img src="{{image}}"style="width:150px;height:150px" alt=""></a></td>
+    {{/each}}
+    <div class="card-footer text-muted">
+       
+           <center> <a href="#">Your Library</a></center>
+       
+    </div>
 
-{{/if}}
-      <td style="padding:10px; border: 1px solid;">{{ Bookname }}</td>
-      
-      <td style="padding:10px; border: 1px solid;">{{ Booktopic }}</td>
-      <td style="padding:10px; border: 1px solid;">{{ category }}</td>
-      <td style="padding:10px; border: 1px solid;">{{ Bookauthor }}</td>
-<td id={{_id}} style="padding:10px; border: 1px solid;width:600px"></td>
-      <td style="padding:10px; border: 1px solid;">{{ NumberofPages }}</td>
-      <td style="padding:10px; border: 1px solid;">{{ status }}</td>
-      <td style="padding:10px; border: 1px solid;"> 
-        
-      <a href="assignnewbook/{{_id}}">
-        <button class="GFG">
-            AssignBook
-        </button>
-    </a></td>
-      <td style="padding:10px; border: 1px solid;"> 
-        
-      <a href="returnnewbook/{{_id}}">
-        <button class="GFG">
-            SubmitBook
-        </button>
-    </a></td>
-    </tr>
-   {{/each}}
-  </tbody>
-</table>
+
 
 
 

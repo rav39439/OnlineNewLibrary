@@ -129,7 +129,7 @@ router.get("/searchbyfine", async (req, res) => {
   })
 
   router.get("/createuserauth",(req,res)=>{
-    res.render("Loginuser")
+    res.render("Loginuser",{title:"Login to add user to this library"})
   })
 
 
