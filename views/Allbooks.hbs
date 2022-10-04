@@ -8,7 +8,7 @@
   <option value="Assigned">assigned</option>
   
 </select>
-  <button type="submit" class="btn btn-primary">Seachbystatus
+  <button type="submit" class="btn btn-primary">SeachAssignedBooks
   
   </button>
 </form>
@@ -18,9 +18,9 @@
 
 <div >
 <form action="/searchbybookname" Method="GET" style="display:inline-flex;">
-    <input type="search" id="form1" name="bookname" class="form-control" style="width:400px" placeholder="Seach your book"/>
+    <input type="search" id="form1" name="bookname" class="form-control" style="width:400px" placeholder="Seach your book By Bookname"/>
     
-  <button type="submit" class="btn btn-primary">SeachbyBookname
+  <button type="submit" class="btn btn-primary">SeachYourBook
   
   </button>
 </form>
@@ -40,12 +40,14 @@
 
 
 
-{{#each mybooks}}
- <div class="card mb-4"style="margin-top:40px">
-    <div class="card-body">
+
+
+ <div class="card mb-4"style="margin-top:40px;">
+  {{#each mybooks}}
+    <div class="card-body"style="border:2px solid black">
         <div class="row">
             <div class="col-lg-6">
-                <a href="#">
+                <a href="images?img={{image}}&&bookname={{Bookname}}&&booktopic={{Booktopic}}&&author={{Bookauthor}}&&id={{_id}}">Read more &rarr;</a>
                     <img class="img-fluid rounded" src="{{image}}" alt="">
                 </a>
             </div>
@@ -68,7 +70,7 @@
            <center> <a href="#">Your Library</a></center>
        
     </div>
-
+  </div>
 
 
 
