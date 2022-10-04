@@ -11,7 +11,8 @@ const BookSchema=new mongoose.Schema({
     issueDate:{type:Date},
     returnDate:{type:Date},
     status:{type:String},
-    userid:{type:String}
+    userid:{type:String},
+    image:{type:String}
 
 },{
     timestamps:true

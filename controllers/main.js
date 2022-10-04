@@ -7,8 +7,7 @@ module.exports.books=
       try {
         let mybooks=[];
           mybooks= await Book.find({});
-        // res.status(200).json(mybooks.reverse());
-         res.render('Allbooks',{mybooks:mybooks,title:"All Books"})
+         res.render('Allbooks',{mybooks:mybooks,title:"All Books",nbooks:JSON.stringify(mybooks)})
        } catch (err) {
          res.status(500).json(err);
        }       

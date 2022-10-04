@@ -247,6 +247,11 @@ router.post("/addbookauth",(req,res)=>{
   }
 })
 
+
+router.get("/images",(req,res)=>{
+ res.render('Fullimage',{image:req.query.img,author:req.query.author,booktopic:req.query.booktopic,
+  bookname:req.query.bookname,id:req.query.id})
+})
 module.exports=router;
 
 

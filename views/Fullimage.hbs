@@ -1,0 +1,28 @@
+
+
+<center><div class="jumbotron"style="background-color:white;width:700px ">
+  <h1 class="display-4">
+
+  <img src="{{image}}" alt="Card image cap"style="width:650px">
+
+  </h1>
+  <p class="lead"><span>Description: </span>{{booktopic}}</p>
+  <hr class="my-4">
+  <ul class="list-group list-group-flush">
+   <li class="list-group-item"><span>Bookname : </span> {{bookname}}</li>
+    <li class="list-group-item"><span>BookAuthor : </span>{{author}}</li>
+    <li class="list-group-item"style="display:none">{{id}}</li>
+  </ul>
+  <p class="lead">
+<a href="assignnewbook/{{id}}">
+        <button class="btn btn-primary">
+            AssignBook
+        </button>
+    </a>
+    <a href="returnnewbook/{{id}}">
+        <button class="btn btn-primary">
+            SubmitBook
+        </button>
+    </a>  
+    </p>
+</div></center>
